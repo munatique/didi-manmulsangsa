@@ -14,16 +14,16 @@ const PRODUCTS_INIT = [
 ];
 
 const NEWS_DATA = [
-  { id: 1, date: "2026.04.18", title: "디디만물상사, 여름맞이 생활용품 할인전 개최", summary: "오는 5월부터 한 달간 생활용품 전 품목 최대 30% 할인 행사를 진행합니다.", tag: "이벤트" },
-  { id: 2, date: "2026.04.15", title: "신규 공구 라인업 대거 입고 안내", summary: "DIY 애호가를 위한 프리미엄 공구 시리즈 45종이 새롭게 입고되었습니다.", tag: "입고" },
-  { id: 3, date: "2026.04.12", title: "배송비 무료 기준 변경 안내", summary: "고객 편의를 위해 무료배송 기준 금액이 5만원에서 3만원으로 하향 조정됩니다.", tag: "공지" },
-  { id: 4, date: "2026.04.08", title: "디디만물상사 공식 인스타그램 오픈", summary: "새 상품 소식과 특가 정보를 인스타그램에서 가장 빠르게 만나보세요.", tag: "소식" },
-  { id: 5, date: "2026.04.03", title: "4월 베스트 상품 TOP 5 발표", summary: "고객 여러분이 가장 많이 찾은 4월의 인기 상품을 소개합니다.", tag: "소식" },
-  { id: 6, date: "2026.03.28", title: "봄맞이 주방용품 기획전 안내", summary: "새 계절을 맞아 주방을 새롭게 꾸밀 수 있는 기획전을 준비했습니다.", tag: "이벤트" },
+  { id: 1, date: "2026.04.18", title: "4월 18일부터 은행권 개인사업자 신용대출 대환 서비스 개시", summary: "금융위원회는 오늘부터 개인사업자가 모바일 앱으로 기존 고금리 대출을 저금리로 비대면 전환할 수 있는 대환대출 서비스를 시행한다고 밝혔습니다.", tag: "정책" },
+  { id: 2, date: "2026.04.15", title: "카카오뱅크, 데이터 기반 개인사업자 신용평가모형 혁신 전략 발표", summary: "2026 금융포럼에서 카카오뱅크 김진호 팀장이 개인사업자 영역의 생산적 금융 실천을 위한 데이터 기반 신용평가모형 혁신 전략을 소개했습니다.", tag: "금융" },
+  { id: 3, date: "2026.04.15", title: "한국평가정보, 홈택스 연동 사업장 60만 돌파…개인사업자 신용평가 패러다임 전환", summary: "한국평가정보(KCS)가 홈택스 정보 연동 사업장 60만 곳을 돌파하며 개인사업자 신용평가의 새로운 전환점을 마련했다고 밝혔습니다.", tag: "금융" },
+  { id: 4, date: "2026.04.13", title: "2026년 4월 소상공인 지원사업 총정리…마감 임박 공고 확인 필수", summary: "상가 리모델링, 음식점 환기시설 교체, 판로 지원 등 4월 신청 가능한 소상공인 지원사업이 다수 진행 중이며 일부는 선착순 마감됩니다.", tag: "지원" },
+  { id: 5, date: "2026.04.06", title: "신규 개인사업자 대출 최저 2.96%…정책자금·은행 대환 전략 안내", summary: "소상공인 정책자금 최저 2.96%, 카카오뱅크 최저 3%대 등 신규 개인사업자를 위한 다양한 저금리 대출 상품과 대환 전략이 주목받고 있습니다.", tag: "대출" },
+  { id: 6, date: "2026.03.28", title: "2026년 달라지는 세금 제도…영세 자영업자 체납 최대 5천만원 소멸", summary: "올해부터 영세 자영업자는 최대 5천만원의 체납 세금이 소멸되고, 부가가치세 현금매출명세서 의무 제출 업종에 유튜버 등이 추가됩니다.", tag: "세금" },
 ];
 
 const CATEGORIES = ["전체", "전자", "생활", "공구", "주방"];
-const TAG_COLORS = { "이벤트": "#e74c3c", "입고": "#2ecc71", "공지": "#3498db", "소식": "#f39c12" };
+const TAG_COLORS = { "정책": "#3498db", "금융": "#2ecc71", "지원": "#e74c3c", "대출": "#f39c12", "세금": "#9b59b6" };
 
 function AddProductModal({ onClose, onAdd }) {
   const [form, setForm] = useState({ name: "", price: "", category: "생활", desc: "", img: "📦" });
@@ -165,7 +165,7 @@ export default function Home() {
               <div style={styles.heroContent}>
                 <div style={styles.heroDateline}>{new Date().toLocaleDateString("ko-KR", { year: "numeric", month: "long", day: "numeric", weekday: "long" })}</div>
                 <div style={styles.heroDividerTop} />
-                <h1 style={styles.heroTitle}>디디만물상사</h1>
+                <h1 style={styles.heroTitle}>뉴스한사발</h1>
                 <div style={styles.heroDividerBottom} />
                 <p style={styles.heroDesc}>정치, 경제, 사회 모든 분야에 필요한 모든 뉴스를 제공합니다</p>
                 <div style={styles.heroEdition}>DAILY NEWS · SINCE 2026</div>
@@ -246,8 +246,8 @@ export default function Home() {
               <div style={styles.newsDetailDivider} />
               <p style={styles.newsDetailBody}>{selectedNews.summary}</p>
               <p style={styles.newsDetailBody}>
-                자세한 내용은 매장 방문 또는 이메일(munatique@naver.com)로 문의해 주세요.
-                디디만물상사는 항상 고객 여러분의 편의를 위해 최선을 다하겠습니다.
+                자세한 내용은 각 기관 공식 홈페이지를 참고하시거나 이메일(munatique@naver.com)로 문의해 주세요.
+                뉴스한사발은 개인사업자·소상공인에게 유용한 최신 뉴스를 전해드립니다.
               </p>
             </article>
           </div>
@@ -323,7 +323,7 @@ export default function Home() {
             <span style={{ fontWeight: 700, fontSize: 15, color: "#fff" }}>디디만물상사</span>
           </div>
           <div style={styles.footerInfo}>
-            <p>대표: 문홍주 | 사업자등록번호: 551-16-02303</p>
+            <p>디디만물상사 대표: 문홍주 | 사업자등록번호: 551-16-02303</p>
             <p>주소: 경기도 성남시 분당구 미금로 215 청솔대원 808동</p>
             <p>이메일: munatique@naver.com</p>
           </div>
